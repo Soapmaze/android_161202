@@ -1,5 +1,6 @@
 package com.example.soapmaze.android1202;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 r_time.start();
+                String strColor = "#FF0000";
+                txt_reserving.setTextColor(Color.parseColor(strColor));
+                r_time.setTextColor(Color.parseColor(strColor));
             }
         });
 
