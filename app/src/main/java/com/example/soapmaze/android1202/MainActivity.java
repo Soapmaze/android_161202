@@ -1,6 +1,7 @@
 package com.example.soapmaze.android1202;
 
 import android.graphics.Color;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         b_start.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
+                r_time.setBase(SystemClock.elapsedRealtime());
                 r_time.start();
                 String strColor = "#FF0000";
                 r_time.setTextColor(Color.parseColor(strColor));
