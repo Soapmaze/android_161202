@@ -11,10 +11,24 @@
     android:orientation="vertical"
     tools:context="com.example.soapmaze.android1202.MainActivity">
 
-    <Chronometer
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/chron_time" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="예약에 걸린 시간"
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tview_label" />
+
+        <Chronometer
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/chron_time"
+            android:gravity="center"
+            android:layout_weight="1" />
+    </LinearLayout>
 
     <Button
         android:text="예약 시작"
@@ -24,7 +38,8 @@
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:id="@+id/rad_group">
 
         <RadioButton
             android:text="날짜 설정 (캘린더뷰)"
@@ -41,10 +56,20 @@
             android:layout_weight="1" />
     </RadioGroup>
 
-    <DatePicker
+    <FrameLayout
         android:layout_width="match_parent"
-        android:id="@+id/datePicker"
-        android:layout_height="240dp" />
+        android:layout_height="match_parent">
+
+        <DatePicker
+            android:layout_width="match_parent"
+            android:id="@+id/datePicker"
+            android:layout_height="240dp" />
+
+        <TimePicker
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:id="@+id/timePicker" />
+    </FrameLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -60,12 +85,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_result"
+            android:id="@+id/tview_result"
             android:layout_weight="1" />
     </LinearLayout>
 
-    <TimePicker
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:id="@+id/timePicker" />
 </LinearLayout>
