@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         rd_time.setChecked(false);
         d_pick.setVisibility(View.INVISIBLE);
         t_pick.setVisibility(View.INVISIBLE);
+        b_end.setVisibility(View.INVISIBLE);
 
         b_start.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -58,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.radio_date :
                         d_pick.setVisibility(View.VISIBLE);
                         t_pick.setVisibility(View.INVISIBLE);
+                        b_end.setVisibility(View.VISIBLE);
+                    case R.id.radio_Time :
+                        t_pick.setVisibility(View.VISIBLE);
+                        d_pick.setVisibility(View.INVISIBLE);
+                        b_end.setVisibility(View.VISIBLE);
                 }
             }
         });
