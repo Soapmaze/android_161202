@@ -36,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         t_pick = (TimePicker)findViewById(R.id.timePicker);
         txt_result = (TextView) findViewById(R.id.tview_result);
         txt_reserving = (TextView)findViewById(R.id.tview_label);
+        rd_date.setChecked(false);
+        rd_time.setChecked(false);
+        d_pick.setVisibility(View.INVISIBLE);
+        t_pick.setVisibility(View.INVISIBLE);
 
         b_start.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -44,6 +48,17 @@ public class MainActivity extends AppCompatActivity {
                 String strColor = "#FF0000";
                 txt_reserving.setTextColor(Color.parseColor(strColor));
                 r_time.setTextColor(Color.parseColor(strColor));
+            }
+        });
+
+        rd.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch(i) {
+                    case R.id.radio_date :
+                        d_pick.setVisibility(View.VISIBLE);
+                        t_pick.setVisibility(View.INVISIBLE);
+                }
             }
         });
 
